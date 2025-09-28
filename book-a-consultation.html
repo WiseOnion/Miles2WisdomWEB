@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Book a Consultation — Miles 2 Wisdom Counseling Services</title>
+<meta name="description" content="Start your healing journey with our streamlined consultation booking form." />
+<meta property="og:title" content="Book a Consultation — Miles 2 Wisdom Counseling Services" />
+<meta property="og:description" content="Begin your path to wellness with our caring team." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="Logo.jpg" />
+<meta name="theme-color" content="#A9C9FF" />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="styles.css" />
+
+<!-- Small inline style to ensure success-card transitions and button states (keeps your look) -->
+<style>
+  /* preserve site look while adding a smoother reveal for the success card */
+  .success-card {
+    display: none;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.36s ease, transform 0.36s ease;
+  }
+  .success-card.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .submit-btn[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+  /* small, subtle status text */
+  .form-message { margin-top: 12px; font-weight:600; }
+  .form-message.success { color: #16a34a; } /* green */
+  .form-message.error   { color: #dc2626; } /* red */
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="Logo.jpg" alt="Miles 2 Wisdom Logo" class="logo" />
+      <div class="brand-text">
+        <h1>Miles 2 Wisdom Counseling</h1>
+        <div class="tagline">Guiding You from Where You Are to Where You Want to Be</div>
+      </div>
+    </a>
+    <nav aria-label="Main Navigation">
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu">☰</button>
+      <ul id="menu" role="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="meet-the-team.html">Team</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="apply-now.html" class="btn">Join The Team</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="form-container">
+    <h1 class="page-title">Book a Consultation</h1>
+    <p class="lead">This streamlined form collects only the essential information needed to get started. We prioritize your privacy while ensuring we can provide the best possible care.</p>
+
+    <div class="form-grid">
+      <!-- Main Form Card -->
+      <div class="card" id="formCard">
+        <h2 style="margin-top: 0; margin-bottom: 24px; font-family: Lora, serif;">Consultation Information</h2>
+
+        <!-- ACTION POINT: form.action posts to your Formspree endpoint -->
+        <form id="consultationForm" method="post" action="https://formspree.io/f/mjkagdkb" novalidate>
+          <div class="field">
+            <label for="firstInitial">First Initial of First Name *</label>
+            <input id="firstInitial" name="firstInitial" type="text" required maxlength="1" placeholder="J" style="max-width: 80px;" inputmode="text" />
+          </div>
+
+          <div class="field">
+            <label for="lastName">Last Name *</label>
+            <input id="lastName" name="lastName" type="text" required placeholder="Doe" autocomplete="family-name" />
+          </div>
+
+          <div class="field">
+            <label for="gender">Gender *</label>
+            <select id="gender" name="gender" required>
+              <option value="">Please select</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="non-binary">Non-binary</option>
+              <option value="prefer-not-to-say">Prefer not to say</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address *</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email" />
+            <div class="field-help">We'll use this address only to contact you about scheduling and care.</div>
+          </div>
+
+          <div class="field">
+            <label>Reason for Visit *</label>
+            <div class="checkbox-group" role="group" aria-labelledby="reasonLabel">
+              <label class="checkbox-option">
+                <input type="checkbox" name="reason[]" value="new-patient-inquiry" />
+                <span>New patient inquiry</span>
+              </label>
+
+              <label class="checkbox-option">
+                <input type="checkbox" name="reason[]" value="general-questions" />
+                <span>General questions or consultation</span>
+              </label>
+
+              <label class="checkbox-option">
+                <input type="checkbox" name="reason[]" value="billing-insurance" />
+                <span>Questions about billing or insurance</span>
+              </label>
+
+              <label class="checkbox-option">
+                <input type="checkbox" name="reason[]" value="other" />
+                <span>Other</span>
+              </label>
+            </div>
+            <div id="reasonError" class="field-error" style="display: none;">Please select at least one reason for your visit.</div>
+          </div>
+
+          <!-- Optional honeypot to reduce spam (invisible to users) -->
+          <!-- Leave commented or remove if you'd rather not use it -->
+          <!-- <div style="display:none;"><label>Leave empty<input type="text" name="hp_field" tabindex="-1" autocomplete="off" /></label></div> -->
+
+          <!-- Hidden Formspree fields -->
+          <input type="hidden" name="_subject" value="New consultation booking" />
+          <input type="hidden" name="_replyto" id="_replyto" value="" />
+
+          <div style="margin-top: 30px;">
+            <button type="submit" class="submit-btn">Submit Intake Form</button>
+            <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+          </div>
+
+          <!-- Success Message -->
+          <div id="successMessage" class="success-card" role="status" aria-live="polite" aria-hidden="true">
+            <h3>Thank you — we will contact you soon</h3>
+            <p>Your form has been sent to our team at <strong>Miles2Wisdom@gmail.com</strong>. We will contact you within 24–48 hours to schedule your first appointment.</p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sidebar Card -->
+      <aside class="card sidebar-card">
+        <h3 style="margin-top: 0; font-family: Lora, serif;">Privacy & Next Steps</h3>
+
+        <div class="info-section">
+          <h4>Minimal Data Collection</h4>
+          <p>This form intentionally collects only essential information. We don't ask for sensitive medical details, addresses, or phone numbers at this stage.</p>
+        </div>
+
+        <div class="info-section">
+          <h4>What Happens Next?</h4>
+          <ul>
+            <li>We'll review your request within 24 hours</li>
+            <li>Our team will contact you to schedule your consultation</li>
+            <li>More detailed information will be gathered during your session</li>
+          </ul>
+        </div>
+
+        <div class="info-section">
+          <h4>Need Immediate Help?</h4>
+          <p>For urgent situations, contact emergency services at 911.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<!-- CTA Bar -->
+<section class="cta-bar">
+  <div class="cta-container">
+    <div class="cta-section">
+      <h3>Questions?</h3>
+      <p>CALL US AT <strong> (910) 759-3330 </strong> FOR ASSISTANCE WITH YOUR CONSULTATION.</p>
+      <a href="tel:910.759.3330" class="btn">Call Now</a>
+    </div>
+    <div class="cta-divider"></div>
+    <div class="cta-section">
+      <h3>Join Us</h3>
+      <p>WE ARE ALWAYS LOOKING FOR INCREDIBLE PEOPLE TO JOIN OUR TEAM!</p>
+      <a href="apply-now.html" class="btn">Apply Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container footgrid">
+    <div>
+      <strong>Miles 2 Wisdom Counseling Services, LLC</strong>
+      <p class="disclaimer">Not a crisis service. Call 911 or 988 in emergencies.</p>
+    </div>
+    <div>
+      <strong>Navigate</strong>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Connect</strong>
+      <ul>
+        <li><a href="https://www.facebook.com/Miles2Wisdom" target="_blank">Facebook</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-logo">
+      <img src="Logo.jpg" alt="Miles 2 Wisdom Logo" />
+    </div>
+    <div class="footer-copyright subtle">
+      © <span id="year"></span> Miles 2 Wisdom Counseling Services, LLC.
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+/* ---------- Header / Menu / UI Behaviors (unchanged look) ---------- */
+(() => {
+  const menuBtn = document.querySelector('.menu-btn');
+  const menu = document.querySelector('nav ul');
+
+  if (menuBtn && menu) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = menu.classList.toggle('open');
+      menuBtn.textContent = isOpen ? '✕' : '☰';
+      menuBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menuBtn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove('open');
+        menuBtn.textContent = '☰';
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // Header shrink animation
+  const header = document.querySelector('header');
+  let lastKnownScrollY = 0;
+  let ticking = false;
+  const SHRINK_THRESHOLD = 80;
+  const EXPAND_THRESHOLD = 40;
+
+  function updateHeader() {
+    const currentY = lastKnownScrollY;
+    if (currentY >= SHRINK_THRESHOLD && !header.classList.contains('shrink')) {
+      header.classList.add('shrink');
+    } else if (currentY <= EXPAND_THRESHOLD && header.classList.contains('shrink')) {
+      header.classList.remove('shrink');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    lastKnownScrollY = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Card reveal on scroll
+  const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+  document.querySelectorAll('.card').forEach(card => cardObserver.observe(card));
+
+  // Set current year in footer
+  const yearElement = document.getElementById('year');
+  if (yearElement) yearElement.textContent = new Date().getFullYear();
+})();
+
+/* ---------- Form submission to Formspree (robust, accessible) ---------- */
+(() => {
+  const form = document.getElementById('consultationForm');
+  const successMessage = document.getElementById('successMessage');
+  const formMessage = document.getElementById('formMessage');
+  const reasonError = document.getElementById('reasonError');
+  const submitBtn = form.querySelector('.submit-btn');
+  const replyToInput = document.getElementById('_replyto');
+
+  // helper to toggle success UI
+  function showSuccess() {
+    successMessage.classList.add('visible');
+    successMessage.setAttribute('aria-hidden', 'false');
+    // hide form gracefully
+    const formCard = document.getElementById('formCard');
+    // use a tiny timeout to allow the success animation to start smoothly
+    setTimeout(() => {
+      form.style.display = 'none';
+      if (formCard) formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 160);
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // Validate checkbox group (name="reason[]")
+    const checkboxNodeList = form.querySelectorAll('input[name="reason[]"]');
+    const reasons = Array.from(checkboxNodeList).filter(cb => cb.checked).map(cb => cb.value);
+    if (reasons.length === 0) {
+      reasonError.style.display = 'block';
+      reasonError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    } else {
+      reasonError.style.display = 'none';
+    }
+
+    // Standard HTML validity
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // Fill _replyto (so Formspree knows reply address)
+    const emailInput = document.getElementById('email');
+    replyToInput.value = emailInput ? emailInput.value.trim() : '';
+
+    // Prepare FormData
+    const fd = new FormData(form);
+
+    // Disable submit UI
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    formMessage.textContent = '';
+    formMessage.className = 'form-message';
+
+    try {
+      // POST to Formspree endpoint declared in form.action
+      const resp = await fetch(form.action, {
+        method: 'POST',
+        body: fd,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (resp.ok) {
+        // success
+        formMessage.textContent = 'Submitted successfully.';
+        formMessage.className = 'form-message success';
+        showSuccess();
+      } else {
+        // read JSON error if present
+        let data = null;
+        try { data = await resp.json(); } catch (err) { /* ignore */ }
+        const msg = data && data.error ? data.error : `Server error (${resp.status})`;
+        formMessage.textContent = `Submission failed: ${msg}`;
+        formMessage.className = 'form-message error';
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    } catch (err) {
+      console.error('Form submit error:', err);
+      formMessage.textContent = 'Network error — please try again later.';
+      formMessage.className = 'form-message error';
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+
+  // realtime checkbox validation
+  const checkboxInputs = form.querySelectorAll('input[name="reason[]"]');
+  checkboxInputs.forEach(cb => cb.addEventListener('change', () => {
+    const isAny = Array.from(checkboxInputs).some(i => i.checked);
+    if (isAny) reasonError.style.display = 'none';
+  }));
+
+  // Real-time validation classes for inputs
+  const requiredInputs = form.querySelectorAll('input[required], select[required]');
+  requiredInputs.forEach(input => {
+    input.addEventListener('blur', function () {
+      if (this.checkValidity()) {
+        this.classList.remove('error');
+        this.classList.add('valid');
+      } else {
+        this.classList.remove('valid');
+        this.classList.add('error');
+      }
+    });
+    input.addEventListener('input', function () {
+      if (this.classList.contains('error') && this.checkValidity()) {
+        this.classList.remove('error');
+        this.classList.add('valid');
+      }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>

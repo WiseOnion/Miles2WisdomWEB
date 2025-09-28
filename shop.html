@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop — Miles 2 Wisdom Counseling Services</title>
+<meta name="description" content="Books, workbooks, and self-care products curated to support your healing journey.">
+<meta property="og:title" content="Shop — Miles 2 Wisdom Counseling Services">
+<meta property="og:description" content="Resources to support your mental health and personal growth journey.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="Logo.jpg">
+<meta name="theme-color" content="#A9C9FF">
+
+<!-- Preload key images -->
+<link rel="preload" as="image" href="Marriage-Ain't-A-Fairytale.JPG">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="Logo.jpg" alt="Miles 2 Wisdom Logo" class="logo">
+      <div class="brand-text">
+        <h1>Miles 2 Wisdom Counseling</h1>
+        <div class="tagline">Guiding You from Where You Are to Where You Want to Be</div>
+      </div>
+    </a>
+    <nav aria-label="Main Navigation">
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu">☰</button>
+      <ul id="menu" role="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="meet-the-team.html">Team</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="Book-a-consultation.html" class="btn">Book A Consultation</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Shop Hero -->
+<section class="section" style="padding-top: 80px;">
+  <div class="container">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 40px;">
+      <div style="flex: 1; min-width: 300px;">
+        <h1 class="page-title" style="text-align: left; margin-bottom: 16px;">Shop — Self-help & Resources</h1>
+        <p class="lead" style="text-align: left; margin-bottom: 0;">Books, workbooks, and self-care resources curated to support your healing journey.</p>
+      </div>
+      <div class="card" style="min-width: 250px; text-align: center; padding: 20px; flex-shrink: 0;">
+        <strong style="color: var(--charcoal); font-size: 1.1rem;">Featured</strong>
+        <div style="margin-top: 8px; color: var(--muted);">Marriage Ain't A Fairytale — available on Amazon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="container">
+    <div class="shop-grid">
+      <!-- Featured Product -->
+      <div class="card product">
+        <img src="shop-item-images/Marriage-Ain't-A-Fairytale.JPG" alt="Marriage Ain't A Fairytale cover">
+        <h3>Marriage Ain't A Fairytale</h3>
+        <p>By: Marva Johnson — Practical, faith-forward relationship guide for building strong marriages and finding resolution in struggling unions.</p>
+        <div class="actions">
+          <a class="btn" href="https://www.amazon.com/Marriage-Aint-Fairytale-Marva-Johnson/dp/1545609314" target="_blank" rel="noopener">Buy on Amazon</a>
+          <button class="btn alt quick-view-btn"
+                  data-title="Marriage Ain't A Fairytale"
+                  data-img="shop-item-images/Marriage-Ain't-A-Fairytale.JPG"
+                  data-desc="Most people don't marry expecting divorce, but many face that reality. Auntie Marva shares practical tools to build strong marriages, help struggling unions find resolution, and keep joy alive."
+                  data-link="https://www.amazon.com/Marriage-Aint-Fairytale-Marva-Johnson/dp/1545609314">
+            Quick View
+          </button>
+        </div>
+      </div>
+
+      <!-- Coming Soon Placeholder 1 -->
+      <div class="card product" style="display: flex; align-items: center; justify-content: center; height: 300px; text-align: center;">
+        <h3>COMING SOON...</h3>
+      </div>
+
+      <!-- Coming Soon Placeholder 2 -->
+      <div class="card product" style="display: flex; align-items: center; justify-content: center; height: 300px; text-align: center;">
+        <h3>COMING SOON...</h3>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Quick View Modal -->
+<div id="quick-view-modal" class="quick-view-modal">
+  <div class="quick-view-content">
+    <button class="close-btn" aria-label="Close">&times;</button>
+    <img src="" alt="" class="quick-view-img">
+    <h2 class="quick-view-title"></h2>
+    <p class="quick-view-desc"></p>
+    <a class="btn quick-view-buy" href="#" target="_blank">Buy Now</a>
+  </div>
+</div>
+
+<!-- CTA Bar -->
+<section class="cta-bar">
+  <div class="cta-container">
+    <div class="cta-section">
+      <h3>Book A Consultation</h3>
+      <p>CALL US AT <strong> (910) 759-3330 </strong> OR <strong> BOOK ONLINE </strong> USING THE BUTTON BELOW.</p>
+      <a href="Book-a-consultation.html" class="btn">Book A Consultation</a>
+    </div>
+    <div class="cta-divider"></div>
+    <div class="cta-section">
+      <h3>Join Us</h3>
+      <p>WE ARE ALWAYS LOOKING FOR INCREDIBLE PEOPLE TO JOIN OUR TEAM!</p>
+      <a href="apply-now.html" class="btn">Apply Now</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <div class="container footgrid">
+    <div>
+      <strong>Miles 2 Wisdom Counseling Services, LLC</strong>
+      <p class="disclaimer">Not a crisis service. Call 911 or 988 in emergencies.</p>
+    </div>
+    <div>
+      <strong>Navigate</strong>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Connect</strong>
+      <ul>
+        <li><a href="https://www.facebook.com/Miles2Wisdom" target="_blank">Facebook</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-logo">
+      <img src="Logo.jpg" alt="Miles 2 Wisdom Logo">
+    </div>
+    <div class="footer-copyright subtle">
+      © <span id="year"></span> Miles 2 Wisdom Counseling Services, LLC.
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// Unified Mobile Menu System
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('nav ul');
+
+if (menuBtn && menu) {
+  menuBtn.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    menuBtn.textContent = isOpen ? '✕' : '☰';
+    menuBtn.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menuBtn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+      menuBtn.textContent = '☰';
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+// Unified Header Shrink Animation
+const header = document.querySelector('header');
+let lastKnownScrollY = 0;
+let ticking = false;
+
+const SHRINK_THRESHOLD = 80;
+const EXPAND_THRESHOLD = 40;
+
+function updateHeader() {
+  const currentY = lastKnownScrollY;
+
+  if (currentY >= SHRINK_THRESHOLD && !header.classList.contains('shrink')) {
+    header.classList.add('shrink');
+  } else if (currentY <= EXPAND_THRESHOLD && header.classList.contains('shrink')) {
+    header.classList.remove('shrink');
+  }
+
+  ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+  lastKnownScrollY = window.scrollY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(updateHeader);
+    ticking = true;
+  }
+}, { passive: true });
+
+// Quick View Modal functionality
+const quickViewBtns = document.querySelectorAll('.quick-view-btn');
+const modal = document.getElementById('quick-view-modal');
+const modalImg = modal.querySelector('.quick-view-img');
+const modalTitle = modal.querySelector('.quick-view-title');
+const modalDesc = modal.querySelector('.quick-view-desc');
+const modalBuy = modal.querySelector('.quick-view-buy');
+const closeBtn = modal.querySelector('.close-btn');
+
+quickViewBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    modalImg.src = btn.dataset.img;
+    modalImg.alt = btn.dataset.title;
+    modalTitle.textContent = btn.dataset.title;
+    modalDesc.textContent = btn.dataset.desc;
+    modalBuy.href = btn.dataset.link || '#';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+closeBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) closeModal();
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('open')) {
+    closeModal();
+  }
+});
+
+// Card reveal animation on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+// Observe all cards
+document.querySelectorAll('.card').forEach(card => {
+  cardObserver.observe(card);
+});
+
+// Set current year
+const yearElement = document.getElementById('year');
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
+</script>
+
+</body>
+</html>
